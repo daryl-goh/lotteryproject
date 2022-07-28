@@ -1,11 +1,11 @@
-package personal.lottery;
+package lotteryproject;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Lottery {
+public class LotteryGame {
 
     public static void main(String[] args) {
 
@@ -16,8 +16,8 @@ public class Lottery {
     //User Random class to instantiate a randomizer 
     Random randomizer = new Random();
     
-    //For Loops to generate 6 numbers
-    for (int i = 0; i < 6; i++)
+    //For Loops to generate 7 numbers
+    for (int i = 0; i < 7; i++)
         while (true){
             //Randomizes number in nextInt between 0 and one less than the number in the bracket. e.g. 49 will randomize between 0 to 48
             //We want random number between 1 to 49, hence this will randomize between (0 to 48) PLUS 1
@@ -27,24 +27,24 @@ public class Lottery {
             if (!winningNumbers.contains(winningNumber)) {
                 winningNumbers.add(winningNumber);
 
-                //To break out of the loop after getting 6 numbers
+                //To break out of the loop after getting 7 numbers
                 break;
 
             }
         }
 
-        //****COMMENT OUT BELOW SO THAT WINNING NUMBER DOES NOT PRINT!****
-        System.out.println(winningNumbers);
+        //****COMMENTED OUT BELOW SO THAT WINNING NUMBER DOES NOT PRINT!****
+        // System.out.println(winningNumbers);
 
 
         //Prompt user to input numbers
-        System.out.println("Please enter your 6 numbers between and inclusive of 1 and 49: ");
+        System.out.println("Please enter your 7 numbers (6 + 1 additional number) between and inclusive of 1 and 49: ");
         Scanner scanner = new Scanner(System.in);
         //Create List to hold user's input
         List<Integer> guessedNumber = new LinkedList<>();
 
-        //To collect 6 numbers from the user, use the For Loop
-        for (int i = 0; i < 6; i++) {
+        //To collect 7 numbers from the user, use the For Loop
+        for (int i = 0; i < 7; i++) {
             //Everytime user inputs number, the below prints to show the list of numbers that they have input
             System.out.println("Your current numbers are " + guessedNumber);
             System.out.println("Please enter a number (1-49):");
